@@ -4,7 +4,7 @@ import "./Navbar.css"
 const Navbar = () => {
   return (
     <div className="navbar-container">
-        <p className="navbar-heading">Notes</p>
+        <p className="navbar-heading">Notes</p>  {/* Navbar text component */}
     </div>
   )
 }

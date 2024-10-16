@@ -1,5 +1,6 @@
 /* Centering container */
 .login-container {
+  
     display: flex;
     justify-content: center;  /* horizontally fixing box to center */
     align-items: center;   /* Preventing extending the height largely */  
@@ -7,7 +8,7 @@
   }
   
   .form-container {
-    background-color: white;
+    background-color: bisque;
     padding: 40px; /* Extending box-size to show space properly */
     border-radius: 8px;
     box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.1);
@@ -51,4 +52,7 @@
   .non-register a:hover {
     text-decoration: underline; /* The link of Creating account: to show when hovered underlined */
   }
-  
+  .error-message{
+    color: red;
+    font-size: 0.7rem;
+  }

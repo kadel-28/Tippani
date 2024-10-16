@@ -1,5 +1,10 @@
+body{ /*  To remove the space present at the top of the webpage */
+    margin: 0;
+    padding: 0;
+}
+
 .navbar-container{
-    background-color: rgba(231, 226, 224, 0.864); 
+    background-color: rgba(189, 218, 236, 0.354); 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: flex; /* a long Navbar extension with height managed */
     align-items: center;
@@ -7,6 +12,7 @@
     height: 110px;
     box-shadow: 0px 5px 4px 0px; /*  Used to put shadow */
     border-radius: 5px;
+    
 }
 
 .navbar-heading{

@@ -38,7 +38,7 @@ const Login = () => {
       <div className="form-container">
         <form onSubmit={handleLogin}>
           <h2 className="login-text">Login</h2>
-          <input type="text" placeholder='Email' className='input-box' 
+          <input type="text" placeholder='Email' className="inputbox" 
             value={email} onChange={(e)=> setEmail(e.target.value)} //when changed, the email value is set to be the value in the input container
           />
           

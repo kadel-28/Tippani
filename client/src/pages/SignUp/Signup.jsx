@@ -45,8 +45,8 @@ const Signup = () => {
         <div className="form-container">
           <form onSubmit={handleSignUp}>
             <h2>SignUp</h2>
-            <input type="text" placeholder='Name' className='input-box' value={name} onChange={(e)=>setName(e.target.value)}/>
-            <input type="text" placeholder='Email' className='input-box' 
+            <input type="text" placeholder='Name' className='name-box' value={name} onChange={(e)=>setName(e.target.value)}/>
+            <input type="text" placeholder='Email' className='email-box' 
             value={email} onChange={(e)=> setEmail(e.target.value)} //when changed, the email value is set to be the value in the input container
           />
             

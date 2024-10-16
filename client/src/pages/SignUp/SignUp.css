@@ -14,10 +14,17 @@
   text-align: center; /* Putting all the text contents to center */
 }
 
-.input-box {
-  width: 91%;
+.name-box {
+  width: 91.28%;
   padding: 10px;
-  margin: 5px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc; 
+  border-radius: 4px;
+}
+.email-box {
+  width: 91.28%;
+  padding: 10px;
+  margin-bottom: 5px;
   border: 1px solid #ccc; 
   border-radius: 4px;
 }

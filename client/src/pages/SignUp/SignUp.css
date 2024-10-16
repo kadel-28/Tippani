@@ -1,0 +1,57 @@
+/* Centering container */
+.sign-up-container {
+    display: flex   ;
+    justify-content: center;  /* horizontally fixing box to center */
+    align-items: center;   /* Preventing extending the height largely */  
+    height: 75vh;  /* Vertically centrally Pulling down */            
+}
+
+.form-container {
+    background-color: bisque;
+    padding: 40px; /* Extending box-size to show space properly */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Putting all the text contents to center */
+}
+
+.input-box {
+    width: 91%;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+}
+.signup-btn {
+    width: 96%;
+    margin: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .signup-btn:hover {
+    background-color: #0056b3; /* When hovered to indicate color */
+  }
+  
+  .already-registered { /* Putting the content at center */
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  
+  .already-registered a { /* Link part of the react section */
+    color: #007bff;
+    text-decoration: none; /* The link of Creating account: to show when hovered underlined */
+  }
+  
+  .already-registered a:hover {
+    text-decoration: underline; /* The link of Creating account: to show when hovered underlined */
+  }
+  .error-message{
+    color: red;
+    font-size: 0.7rem;
+  }
+

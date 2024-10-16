@@ -40,15 +40,16 @@ const Login = () => {
           <h2 className="login-text">Login</h2>
           <input type="text" placeholder='Email' className='input-box' 
             value={email} onChange={(e)=> setEmail(e.target.value)} //when changed, the email value is set to be the value in the input container
-          /> 
+          />
+          
           <PasswordInput 
             value={password}
             onChange={(e)=> setPassword(e.target.value)}
           />
           <p className="error-message">{error}</p>
           <button type="submit" className="login-btn">Login</button>
-          <p className="non-register">Not registered yet? 
-            <Link to="/SignUp">.Create an Account.</Link>
+          <p className="non-register">Not registered yet? {" "}
+            <Link to="/SignUp">Create an Account.</Link>
           </p>
         </form>
       </div>

@@ -16,7 +16,7 @@
   } 
   
   .input-box {
-    width: 91%;
+    width: 100%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc; 
@@ -34,7 +34,7 @@
     cursor: pointer;
     text-align: center;
   }
-  
+   
   .login-btn:hover {
     background-color: #0056b3; /* When hovered to indicate color */
   }
@@ -54,5 +54,5 @@
   }
   .error-message{
     color: red;
-    font-size: 0.7rem;
+    font-size: 0.7rem;  
   }

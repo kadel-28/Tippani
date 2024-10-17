@@ -1,0 +1,47 @@
+.profile-info-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+
+.initals-icon{
+    display: flex;
+    border-radius: 50%;
+    background-color: rgb(176, 161, 161);
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.name-button-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.name-display{
+    width: 85px;
+    display: flex;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+.logout-btn {
+    width: 85px;
+    height: 35px;
+    background-color: #ff1100;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+  }
+   
+  .logout-btn:hover {
+    background-color: #b30000e6; /* When hovered to indicate color */
+  }
+  

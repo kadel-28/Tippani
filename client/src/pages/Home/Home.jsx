@@ -2,6 +2,7 @@ import React from 'react'
 import "./Home.css"
 import Navbar from '../../components/Navbar/Navbar'
 import NoteCard from '../../components/Cards/NoteCard'
+import {MdAdd} from "react-icons/md"
 
 
 const Home = () => {
@@ -24,6 +25,11 @@ const Home = () => {
         />
         </div>
       </div>
+
+      <button className='add-btn' onClick={()=>{}}>
+        <MdAdd className="add-icon"/>
+      </button>
+
     </>
   )
 }

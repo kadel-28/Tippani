@@ -4,6 +4,7 @@ import ProfileInfo from '../Cards/ProfileInfo'
 import { Navigate, useNavigate } from 'react-router-dom'
 import SearchBar from '../SearchBar/SearchBar'
 
+
 const Navbar = () => {
 
   const [searchQuery, setSearchQuery]=useState("");

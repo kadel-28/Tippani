@@ -23,3 +23,15 @@ note-container{
     font-size: 2rem;
     color: white;
 }
+.modal-container {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white; /* Background color for modal content */
+    padding: 10px;
+    border-radius: 25px; /* Optional: rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
+    width: 60vw;
+    height: 75vh;
+}

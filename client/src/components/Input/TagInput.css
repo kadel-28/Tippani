@@ -1,0 +1,52 @@
+.create-btn{
+    background-color: white;
+    font-size: x-large;
+    color: rgb(36, 158, 234);
+    height: 43px;
+    border: 0.5px solid rgb(36, 158, 234);
+    border-radius: 10px;
+}
+.create-btn:hover{
+    background-color:rgb(36, 158, 234) ;
+    color: white;
+}
+
+.tag-input{
+    font-family: fantasy ;
+    font-size: medium;
+    background-color: rgb(248, 249, 250);
+    border: none;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    padding: 10px;
+    width: 54vw;
+    color: slategrey;
+    border-radius: 10px;
+}
+.tags-input-container{
+    display: flex;
+    flex-direction: row;
+}
+.display-tags{
+    display: flex;
+    align-items: center;
+    gap: 2;
+    flex-wrap: wrap;
+    margin: 4px;
+} 
+.show-tags{ 
+    background-color: rgb(248, 249, 250);
+    color: slategrey;
+    padding: 5px;
+    margin: 5px;
+    
+}
+.delete-tag-btn{
+    border: none;
+    background-color: rgb(248, 249, 250);
+    color: slategrey;
+    margin: 2px;
+    align-items: center;
+    font-size: larger;
+    padding-top: 3px;
+}

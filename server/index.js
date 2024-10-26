@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const config = require("./config.json");
 const jwt=require('jsonwebtoken');
 const {authenticateToken} =require('./utilities')
-const User = require('./models/userModel')
+const userRoutes = require('./routes/userRoutes')
 const bcryptjs = require('bcryptjs')
 const validator = require('validator')
 
@@ -21,9 +21,7 @@ app.use(
 );
 
 mongoose.connect(process.env.MONGODB_URI, { 
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 5000 // Timeout after 5 seconds instead of 10
+    serverSelectionTimeoutMS: 30000,
   }
     
 ).then(() => {
@@ -32,6 +30,8 @@ mongoose.connect(process.env.MONGODB_URI, {
     console.error('Error connecting to MongoDB:', err.message);
 });
 
+app.use('/user', userRoutes);
+
 app.listen(8000);
 
-module.exports=app;
+module.exports=app; 

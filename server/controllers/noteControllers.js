@@ -96,8 +96,41 @@ const getAllNotes = async(req, res)=>{
     }
 
 }
+
+const deleteNote = async(req, res)=> {
+    const noteId= req.params.noteId;
+    const {user}= req.user;
+
+    try {
+        const note = await Note.findOne({
+            _id: noteId, 
+            userId: user._id
+        })
+    
+        if (!note){
+            return res.status(404).json({
+                error: true,
+                message: "Note Not Found"
+            });
+        }
+
+        await Note.deleteOne({_id: noteId, userId: user._id});
+
+        return res.status(200).json({
+            error: false, 
+            message:"Note deleted Successfully"
+        });
+
+    } catch (error) {
+        return res.status(500).json({ error: errorHandler(error) });
+    }
+}
+
+
+
 module.exports={
     addNote,
     editNote,
-    getAllNotes
+    getAllNotes,
+    deleteNote
 }

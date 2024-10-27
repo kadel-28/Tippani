@@ -5,8 +5,8 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const config = require("./config.json");
 const jwt=require('jsonwebtoken');
-const {authenticateToken} =require('./utilities')
 const userRoutes = require('./routes/userRoutes')
+const noteRoutes = require('./routes/noteRoutes');
 const bcryptjs = require('bcryptjs')
 const validator = require('validator')
 
@@ -31,6 +31,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 });
 
 app.use('/user', userRoutes);
+app.use("/note", noteRoutes);
 
 app.listen(8000);
 

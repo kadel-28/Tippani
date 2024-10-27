@@ -32,7 +32,6 @@ const addNote = async(req,res)=>{
 
         return res.json({
             error: false,
-            note,
             message: "Note added Successfully",
         });
     }
@@ -80,8 +79,25 @@ const editNote = async(req, res)=>{
     }
 }
 
+const getAllNotes = async(req, res)=>{
 
+    const {user}= req.user;
+
+    try {
+        const notes = await Note.find({userId: user._id}).sort({isPinned: -1});
+        return res.status(400).json({
+            error: false,
+            message: "Notes Retrieved Successfully",
+        });
+
+
+    } catch (error) {
+        return res.status(500).json({ error: errorHandler(error) });
+    }
+
+}
 module.exports={
     addNote,
-    editNote
+    editNote,
+    getAllNotes
 }

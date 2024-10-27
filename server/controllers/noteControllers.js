@@ -126,11 +126,39 @@ const deleteNote = async(req, res)=> {
     }
 }
 
+const isPinned = async (req, res)=>{
+    const noteId= req.params.noteId;
+    const {isPinned}=req.body;
+    const {user}=req.user;
 
+    try {
+        const note = await Note.findOne({_id:noteId, userId:user._id});
+
+        if (!note){
+            return res.status(404).json({
+                error: true,
+                message:"Note not Found"
+            });
+        }
+
+        if (isPinned) note.isPinned=isPinned;
+
+        await note.save();
+
+        return res.status(200).json({
+            error: false,
+            message:"Notes updated Successfully"
+        });
+        
+    } catch (error) {
+        return res.status(500).json({ error: errorHandler(error) });
+    }
+}
 
 module.exports={
     addNote,
     editNote,
     getAllNotes,
-    deleteNote
+    deleteNote,
+    isPinned
 }

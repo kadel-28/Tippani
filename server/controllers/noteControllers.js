@@ -141,7 +141,7 @@ const isPinned = async (req, res)=>{
             });
         }
 
-        if (isPinned) note.isPinned=isPinned;
+        note.isPinned=isPinned;
 
         await note.save();
 

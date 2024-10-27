@@ -96,9 +96,31 @@ const login = async (req, res) => {
     catch (error) {
         return res.status(500).json({ error: errorHandler(error) });
     }
+} 
+
+const getUser = async(req, res)=>{
+    const {user}= req.user;
+
+    const isUser= await User.findOne({_id:user._id});
+
+    if (!isUser) {
+        return res.status(401).json({
+            error: true,
+            message: "User not Found"
+        })
+    }
+
+    return res.status(200).json({
+        user: {
+            fullName: isUser.fullName,
+            email: isUser.email
+        },
+        message:"User retrived Successfully"
+    });
 }
 module.exports={
     signUp,
-    login
+    login,
+    getUser
 }
 

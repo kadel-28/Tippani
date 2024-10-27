@@ -3,14 +3,22 @@ const bcrypt=require('bcryptjs');
 const jwt=require('jsonwebtoken');
 const User = require('../models/userModel');
 const { errorHandler } = require('../utilities');
+require('dotenv').config();
 
 const signUp = async (req, res) => {
 
     const {fullName, email, password}=req.body;
 
     try{
-        if (!fullName || !email ||!password) {
-            return res.status(400).json({ error: "Please add all fields " });
+        if (!fullName ) {
+            return res.status(400).json({ error: "Please enter your full-name." });
+        }
+        if (!email ) {
+            return res.status(400).json({ error: "Please enter your email." });
+        }
+
+        if (!password ) {
+            return res.status(400).json({ error: "Please enter your password." });
         }
 
         const userExists = await User.findOne({email:email});
@@ -29,8 +37,12 @@ const signUp = async (req, res) => {
 
             await newUser.save();
 
+            const accessToken = jwt.sign({newUser}, process.env.ACCESS_TOKEN_SECRET, {
+                expiresIn: "36000m",
+            });
+
             if (newUser) {
-                return res.status(201).json({ message: "Registered successfully. Please check your email to verify your account." });
+                return res.status(201).json({ message: "User registered successfully" });
             }
         }
     }
@@ -38,4 +50,55 @@ const signUp = async (req, res) => {
         return res.status(500).json({ error: errorHandler(error) });
     }
 }
-module.exports={signUp,}
+
+
+const login = async (req, res) => {
+
+    const {email, password}=req.body;
+
+    try{
+        if (!email ) {
+            return res.status(400).json({ error: "Please enter your email." });
+        }
+        
+        if (!password ) {
+            return res.status(400).json({ error: "Please enter your password." });
+        }
+
+        const userInfo = await User.findOne({email:email});
+
+        if (!userInfo) {
+            return res.status(400).json({ error: "User is not registered" });
+        } 
+        const match = await bcrypt.compare(password, userInfo.password)
+
+        if (!match){
+            return res.status(500).json({ 
+                error: true,
+                message:"Invalid Credentials",
+             });
+        }
+        else{
+
+            const user={user:userInfo};
+            const accessToken=jwt.sign(user, process.env.ACCESS_TOKEN_SECRET,{
+                expiresIn:"36000m"
+            });
+
+            return res.status(201).json({
+                error: false,
+                message: 'Successful Login',
+                // email,
+                // accessToken,
+            });
+        }
+    }
+    catch (error) {
+        return res.status(500).json({ error: errorHandler(error) });
+    }
+}
+module.exports={
+    signUp,
+    login
+}
+
